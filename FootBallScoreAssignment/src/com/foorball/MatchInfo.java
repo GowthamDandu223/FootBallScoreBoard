@@ -1,13 +1,18 @@
 package com.foorball;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class MatchInfo {
-	
+	private static AtomicLong idCounter = new AtomicLong();
+	private String matchId =String.valueOf(idCounter.getAndIncrement()) ;
 	private String homeTeam;
 	private String awayTeam;
-	private int homeTeamScore;
-	private int awayTeamScore;
+	private String homeTeamScore;
+	private String awayTeamScore;
 	private String startTime;
 	private String status;
+	private int TotalScore;
+	
 	public String getHomeTeam() {
 		return homeTeam;
 	}
@@ -20,16 +25,17 @@ public class MatchInfo {
 	public void setAwayTeam(String awayTeam) {
 		this.awayTeam = awayTeam;
 	}
-	public int getHomeTeamScore() {
+	
+	public String getHomeTeamScore() {
 		return homeTeamScore;
 	}
-	public void setHomeTeamScore(int homeTeamScore) {
+	public void setHomeTeamScore(String homeTeamScore) {
 		this.homeTeamScore = homeTeamScore;
 	}
-	public int getAwayTeamScore() {
+	public String getAwayTeamScore() {
 		return awayTeamScore;
 	}
-	public void setAwayTeamScore(int awayTeamScore) {
+	public void setAwayTeamScore(String awayTeamScore) {
 		this.awayTeamScore = awayTeamScore;
 	}
 	public String getStartTime() {
@@ -43,6 +49,18 @@ public class MatchInfo {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getMatchId() {
+		return matchId;
+	}
+	public void setMatchId(String matchId) {
+		this.matchId = matchId;
+	}
+	public int getTotalScore() {
+		return TotalScore;
+	}
+	public void setTotalScore(int totalScore) {
+		TotalScore = totalScore;
 	}
 	
 
